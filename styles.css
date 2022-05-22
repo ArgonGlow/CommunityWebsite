@@ -20,9 +20,13 @@ body {
     color: white;
 }
 
-body::after {
+/* body::after {
     content: "";
     background-image: url("./images/fence_background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
     opacity: 0.3;
     top: 0;
     left: 0;
@@ -30,6 +34,17 @@ body::after {
     right: 0;
     position: absolute;
     z-index: -1;
+} */
+
+#background {
+    position: absolute;
+    opacity: 0.4;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    width: 100vw;
+    min-height: 100%;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%);
+    mask-image: linear-gradient(to top, transparent 0%, black 35%);
 }
 
 .navbar {
@@ -90,8 +105,8 @@ i {
 .main-wrapper {
     position: relative;
     margin: 0 auto;
-    /* max-width: 99%; */
-    /* padding: 5px; */
+    max-width: 1250px;
+    padding: 0 5px;
 }
 
 .main-blocks {
@@ -99,16 +114,17 @@ i {
     margin-top: 2rem;
     justify-content: center;
     align-content: center;
-    align-items: start;
+    align-items: end;
     /* grid-template-columns: repeat(auto-fit, minmax(560px, 1fr)); */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    column-gap: 20px;
     /* grid-template-rows: repeat(3, minmax(150px, 50vw)); */
 }
 
 .main-blocks article {
     position: relative;
     overflow: hidden;
-    margin: 10px;
+    margin: 10px 0;
     padding: 0 20px;
     /* height: auto; */
     /* background-color: rgb(71, 71, 71); */
@@ -149,14 +165,16 @@ i {
 }
 
 .wrapper {
-    padding: 2rem 10px;
+    position: relative;
+    margin: 0 auto;
+    padding: 2rem 5px;
+    max-width: 1250px;
 }
 
 .gallery {
     position: relative;
     overflow: hidden;
     margin: 0 auto;
-    max-width: 1300px;
     padding: 10px;
     /* max-width: 97%; */
     text-align: center;
