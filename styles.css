@@ -1,0 +1,206 @@
+:root {
+    --backCol: #222;
+    --blockCol: #1E2021;
+    --footerCol: rgb(126, 126, 126);
+    --borderRad: 0.65rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: rgb(27, 27, 27); */
+    background-color: var(--backCol);
+    /* background-image: url("./images/fence_background.jpg"); */
+    font-family: "Lato";
+    color: white;
+}
+
+body::after {
+    content: "";
+    background-image: url("./images/fence_background.jpg");
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    /* background-color: rgb(71, 71, 71); */
+    background-color: var(--blockCol);
+    border-bottom: 1px solid rgb(71, 71, 71);
+    /* box-shadow: inset 0 0 1px rgb(255, 255, 255); */
+    z-index: 5;
+}
+
+i {
+    color: rgb(126, 126, 126);
+}
+
+.navbar-center {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4rem;
+}
+
+.navbar-center h1 {
+    margin: 0;
+}
+
+.navbar-logo {
+      height: 3em;
+      margin: 10px;
+      border: 2px solid rgb(126, 126, 126);
+      border-radius: 5px;
+}
+
+.nav-icon {
+    position: absolute;
+    font-size: 1.5rem;
+    padding: 20px;
+}
+
+.main-blocks {
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center;
+    align-content: center;
+    align-items: start;
+    /* grid-template-columns: repeat(auto-fit, minmax(560px, 1fr)); */
+    grid-template-columns: repeat(auto-fit, 370px);
+    /* grid-template-rows: repeat(3, minmax(150px, 50vw)); */
+}
+
+.main-blocks article {
+    margin: 10px;
+    padding: 0 20px;
+    /* height: auto; */
+    /* background-color: rgb(71, 71, 71); */
+    background-color: var(--blockCol);
+    border: 2px solid rgb(71, 71, 71);
+    border-left: 5px solid rgb(126, 126, 126);
+    border-radius: var(--borderRad);
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #303030;
+    border-color: rgb(71, 71, 71);
+    text-decoration-line: none;
+}
+
+.btn-dark:hover {
+    color: rgb(126, 126, 126);
+    background-color: var(--blockCol);
+}
+
+
+.gallery {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 97%;
+    text-align: center;
+    background-color: var(--blockCol);
+    border: 2px solid rgb(71, 71, 71);
+    border-left: 5px solid rgb(126, 126, 126);
+    border-radius: var(--borderRad);
+    
+}
+
+.gallery-grid {
+    display: grid;
+    margin: 0 10px;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(auto-fit, 320px);
+}
+
+.gallery-item {
+    position: relative;
+    overflow:hidden;
+    margin: 10px;
+    padding: 0;
+    /* width: 300px; */
+    /* text-align: center; */
+    border: 2px solid rgb(126, 126, 126);
+    /* box-shadow: inset 0 0 5px rgb(126, 126, 126); */
+    border-radius: var(--borderRad);
+}
+
+.gallery-item img {
+    display: block;
+    backface-visibility: hidden;
+    transition: .5s ease;
+    opacity: 1;
+}
+
+.overlay {
+    transition: .5s ease;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    /* background-color: aqua; */
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.overlay i {
+    position: relative;
+    /* left: 50%; */
+    top: -15px;
+    font-size: 2rem;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover img {
+    opacity: 0.3;
+}
+
+footer {
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+    color: var(--footerCol);
+  }
+
+footer hr {
+    border: 1px solid rgb(71, 71, 71);
+    border-radius: 1px;
+}
