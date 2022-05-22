@@ -2,7 +2,8 @@
     --backCol: #222;
     --blockCol: #1E2021;
     --footerCol: rgb(126, 126, 126);
-    --borderRad: 0.65rem;
+    --borderCol: rgb(71, 71, 71);
+    --borderRad: 0.4rem;
 }
 
 * {
@@ -77,6 +78,22 @@ i {
     padding: 20px;
 }
 
+#edge {
+    position: absolute;
+    height: 100%;
+    width: 0.5rem;
+    left: 0px;
+    top: 0px;
+    background-color: rgb(126, 126, 126);
+}
+
+.main-wrapper {
+    position: relative;
+    margin: 0 auto;
+    /* max-width: 99%; */
+    /* padding: 5px; */
+}
+
 .main-blocks {
     display: grid;
     margin-top: 2rem;
@@ -84,19 +101,24 @@ i {
     align-content: center;
     align-items: start;
     /* grid-template-columns: repeat(auto-fit, minmax(560px, 1fr)); */
-    grid-template-columns: repeat(auto-fit, 370px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
     /* grid-template-rows: repeat(3, minmax(150px, 50vw)); */
 }
 
 .main-blocks article {
+    position: relative;
+    overflow: hidden;
     margin: 10px;
     padding: 0 20px;
     /* height: auto; */
     /* background-color: rgb(71, 71, 71); */
     background-color: var(--blockCol);
-    border: 2px solid rgb(71, 71, 71);
-    border-left: 5px solid rgb(126, 126, 126);
+    /* border: 2px solid rgb(71, 71, 71); */
+    /* border-left: 5px solid rgb(126, 126, 126); */
+    /* border-left: 5px solid rgb(126, 126, 126); */
     border-radius: var(--borderRad);
+    box-shadow: inset -2px 0 0 var(--borderCol), inset 0 -2px 0 var(--borderCol), inset 2px 0 0 var(--borderCol), inset 0 2px 0 var(--borderCol);
+
 }
 
 .btn {
@@ -126,17 +148,23 @@ i {
     background-color: var(--blockCol);
 }
 
+.wrapper {
+    padding: 2rem 10px;
+}
 
 .gallery {
-    max-width: 1300px;
+    position: relative;
+    overflow: hidden;
     margin: 0 auto;
+    max-width: 1300px;
     padding: 10px;
-    max-width: 97%;
+    /* max-width: 97%; */
     text-align: center;
     background-color: var(--blockCol);
-    border: 2px solid rgb(71, 71, 71);
-    border-left: 5px solid rgb(126, 126, 126);
+    /* border: 2px solid rgb(71, 71, 71); */
+    /* border-left: 5px solid rgb(126, 126, 126); */
     border-radius: var(--borderRad);
+    box-shadow: inset -2px 0 0 var(--borderCol), inset 0 -2px 0 var(--borderCol), inset 2px 0 0 var(--borderCol), inset 0 2px 0 var(--borderCol);
     
 }
 
@@ -204,3 +232,4 @@ footer hr {
     border: 1px solid rgb(71, 71, 71);
     border-radius: 1px;
 }
+
