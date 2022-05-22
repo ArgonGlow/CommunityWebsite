@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>Convergence Gaming</title>
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link type="text/css" rel="stylesheet" href="https://convergencegaming.org/assets/css/discordInvite.css?1621831288">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="imageViewer.css">
+  <link rel="stylesheet" type="text/css" href="https://convergencegaming.org/assets/css/discordInvite.css?1621831288">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/91d17bd6fc.js" crossorigin="anonymous"></script>
+  <title>Convergence Gaming</title>
   <img id="background" src="./images/fence_background.jpg" alt="">
 </head>
 <body>
@@ -54,52 +55,93 @@
         <div id="edge"></div>
         <div class="gallery-item">
           <div class="overlay"><i class="fa-solid fa-expand"></i></div>
-          <a target="_blank" href="./images/gallery/1.jpg">
-            <img src="./images/gallery/1.jpg" alt="Cinque Terre" width="100%">
-          </a>
+          <img src="./images/gallery/1.jpg" alt="First Image" onclick="openViewer();currentSlide(1);" width="100%">
           <p>image 1</p>
         </div>
         <div class="gallery-item">
           <div class="overlay"><i class="fa-solid fa-expand"></i></div>
-          <a target="_blank" href="./images/gallery/1.jpg">
-            <img src="./images/gallery/6.jpg" alt="Cinque Terre" width="100%">
-          </a>
+          <img src="./images/gallery/6.jpg" alt="" onclick="openViewer();currentSlide(2);" width="100%">
           <p>image 2</p>
         </div>
         <div class="gallery-item">
           <div class="overlay"><i class="fa-solid fa-expand"></i></div>
-          <a target="_blank" href="./images/gallery/1.jpg">
-            <img src="./images/gallery/1.jpg" alt="Cinque Terre" width="100%">
-          </a>
+          <img src="./images/gallery/1.jpg" alt="" onclick="openViewer();currentSlide(3);" width="100%">
           <p>image 3</p>
         </div>
         <div class="gallery-item">
           <div class="overlay"><i class="fa-solid fa-expand"></i></div>
-          <a target="_blank" href="./images/gallery/1.jpg">
-            <img src="./images/gallery/6.jpg" alt="Cinque Terre" width="100%">
-          </a>
+          <img src="./images/gallery/6.jpg" alt="" onclick="openViewer();currentSlide(4);" width="100%">
           <p>image 4</p>
         </div>
         <div class="gallery-item">
           <div class="overlay"><i class="fa-solid fa-expand"></i></div>
-          <a target="_blank" href="./images/gallery/1.jpg">
-            <img src="./images/gallery/1.jpg" alt="Cinque Terre" width="100%">
-          </a>
+          <img src="./images/gallery/1.jpg" alt="" onclick="openViewer();currentSlide(5);" width="100%">
           <p>image 5</p>
         </div>
         <div class="gallery-item">
           <div class="overlay"><i class="fa-solid fa-expand"></i></div>
-          <a target="_blank" href="./images/gallery/1.jpg">
-            <img src="./images/gallery/6.jpg" alt="Cinque Terre" width="100%">
-          </a>
+          <img src="./images/gallery/6.jpg" alt="" onclick="openViewer();currentSlide(6);" width="100%">
           <p>image 6</p>
         </div>
       </div>
     </div>
   </div>
+  <!-- Image Viewer -->
+  <div class="viewer" id="my-viewer">
+    <div class="viewer-content">
+
+      <!-- Viewer Header -->
+      <div class="viewer-header">
+        <!-- Close Button -->
+        <span class="close" onclick="closeViewer()">&times;</span>
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="changeSlides(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlides(1)">&#10095;</a>
+        <!-- Image Index -->
+        <span class="numbertext" id="index-number"></span>
+      </div>
+      <!-- Viewer Header Ends -->
+
+      <!-- Viewer Body -->
+      <div class="viewer-body">
+        <!-- Images for Slide Show -->
+        <div class="my-slides" data-index-number="1 / 6">
+          <img src="./images/gallery/1.jpg" class="landscape-image image" alt="First Image">
+        </div>
+        <div class="my-slides" data-index-number="2 / 6">
+          <img src="./images/gallery/6.jpg" class="landscape-image image" alt="Second Image">
+        </div>
+        <div class="my-slides" data-index-number="3 / 6">
+          <img src="./images/gallery/1.jpg" class="landscape-image image" alt="Third Image">
+        </div>
+        <div class="my-slides" data-index-number="4 / 6">
+          <img src="./images/gallery/6.jpg" class="landscape-image image" alt="Fourth Image">
+        </div>
+        <div class="my-slides" data-index-number="5 / 6">
+          <img src="./images/gallery/1.jpg" class="landscape-image image" alt="Fifth Image">
+        </div>
+        <div class="my-slides" data-index-number="6 / 6">
+          <img src="./images/gallery/6.jpg" class="landscape-image image" alt="Sixth Image">
+        </div>
+      </div>
+      <!-- Viewer Body Ends -->
+
+      <!-- Viewer Footer -->
+      <div class="viewer-footer">
+        <p id="caption"></p>
+      </div>
+      <!-- Viewer Footer Ends -->
+    </div>
+    <!-- Viewer Content Ends -->
+  </div>
+  <!-- Image Viewer Ends -->
   <footer>
     <hr class="rounded">
     <p>Copyright&copy; by your mom</p>
   </footer>
+  <!-- Image Viewer Ends -->
+
+  <!-- Image Viewer Script -->
+  <script type="text/javascript" src="./assets/js/imageViewer.js"></script>
 </body>
 </html>
