@@ -17,6 +17,7 @@ body {
     background-color: var(--backCol);
     /* background-image: url("./images/fence_background.jpg"); */
     font-family: "Lato";
+    /* font-size: 16px; */
     color: white;
 }
 
@@ -176,6 +177,7 @@ i {
     overflow: hidden;
     margin: 0 auto;
     padding: 10px;
+    padding-bottom: 30px;
     /* max-width: 97%; */
     text-align: center;
     background-color: var(--blockCol);
@@ -188,16 +190,18 @@ i {
 
 .gallery-grid {
     display: grid;
-    margin: 0 10px;
+    /* margin: 0 10px; */
     justify-content: center;
     align-content: center;
-    grid-template-columns: repeat(auto-fit, 320px);
+    grid-template-columns: repeat(auto-fit, 380px);
+    column-gap: 20px;
+    row-gap: 20px;
 }
 
 .gallery-item {
     position: relative;
     overflow:hidden;
-    margin: 10px;
+    /* margin: 10px; */
     padding: 0;
     /* width: 300px; */
     /* text-align: center; */
@@ -209,12 +213,12 @@ i {
 .gallery-item img {
     display: block;
     backface-visibility: hidden;
-    transition: .5s ease;
+    transition: .3s ease;
     opacity: 1;
 }
 
 .overlay {
-    transition: .5s ease;
+    transition: .3s ease;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -236,7 +240,9 @@ i {
 }
 
 .gallery-item:hover img {
-    opacity: 0.3;
+    opacity: 0.5;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
 }
 
 footer {
