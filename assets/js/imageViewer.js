@@ -18,7 +18,7 @@ function closeViewer() {
 
 let slideIndex = 1;
 // initially hide all images
-showSlides(slideIndex)
+showSlides(slideIndex);
 
 // navigate through all images > prev/next
 function changeSlides(n) {
@@ -32,12 +32,11 @@ function currentSlide(n) {
 
 // main function > shows the desired slide
 function showSlides(n) {
-    let i;
-    const slides = document.getElementsByClassName("my-slides")
+    const slides = document.getElementsByClassName("my-slides");
 
     // handle navigation on first or last slide
     if (n > slides.length) { slideIndex = 1; }
-    if (n < 1) { slideIndex = slides.length}
+    if (n < 1) { slideIndex = slides.length; }
 
     // hide all images
     for (let i = 0; i < slides.length; i++) {
@@ -48,11 +47,10 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
 
     // display index of current image
-    document.getElementById('index-number').innerHTML = slides[slideIndex - 1].getAttribute('data-index-number')
+    document.getElementById('index-number').innerHTML = slides[slideIndex - 1].getAttribute('data-index-number');
 
     // display caption of current image
-    const images = document.getElementsByClassName("image")
+    const images = document.getElementsByClassName("image");
     
     document.getElementById('caption').innerHTML = images[slideIndex - 1].alt;
-
 }
